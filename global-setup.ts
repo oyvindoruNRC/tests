@@ -19,6 +19,15 @@ export default async () => {
   // Fill both fields and submit. The IDCS page shows username and password simultaneously.
   await page.getByLabel('Username').fill(process.env.HCM_GLOBALHR_USER);
   await page.getByLabel('Password').fill(process.env.HCM_GLOBALHR_PASSWORD);
-  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.getByRole('button', { name: 'Next' }).click();
 
+  // Wait for the full post-login redirect chain to settle.
+  await page.waitForLoadState('networkidle');
+
+  // Navigate explicitly to the HCM front page in case login landed on a blank dashboard.
+  await page.goto(process.env.HCM_BASE_URL);
+  await page.waitForLoadState('networkidle');
+
+  await context.storageState({ path: 'auth.json' });
+  await browser.close();
 };
