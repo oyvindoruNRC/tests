@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx playwright *)",
+      "Bash(Out-File -Encoding utf8 \"test-results.json\")",
+      "Read(//tmp/**)",
+      "Bash(echo \"PID: $!\")"
+    ]
+  }
+}

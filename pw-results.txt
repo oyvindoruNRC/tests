@@ -1,0 +1,502 @@
+
+Running 12 tests using 3 workers
+
+[1A[2K[1/12] [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee
+[1A[2K[2/12] [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee
+[1A[2K[3/12] [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee
+[1A[2K[4/12] [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee (retry #1)
+[1A[2K[5/12] [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee (retry #1)
+[1A[2K[6/12] [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee (retry #1)
+[1A[2K  1) [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Submit' })[22m
+    [2m    - locator resolved to <button disabled aria-label="Submit" class="BaseButtonStyles_styles_base__jvi3ds0 BaseButtonStyles_styles_sizes_sm__jvi3ds2d BaseButtonStyles_styles_variants_callToAction_base__jvi3ds13 BaseButtonStyles_styles_styled__jvi3ds1 BaseButtonStyles_styles_styledOutline__jvi3ds2 BaseButtonStyles_styles_variants_callToAction_pseudohover__jvi3ds18 BaseButtonStyles_styles_variants_callToAction_disabled__jvi3ds15">…</button>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    196 × waiting for element to be visible, enabled and stable[22m
+    [2m        - element is not enabled[22m
+    [2m      - retrying click action[22m
+    [2m        - waiting 500ms[22m
+    [2m    - waiting for element to be visible, enabled and stable[22m
+
+
+      67 |     const submitButton = page.getByRole('button', { name: 'Submit' });
+      68 |     await submitButton.scrollIntoViewIfNeeded();
+    > 69 |     await submitButton.click();
+         |                        ^
+      70 |
+      71 |     // Confirm submission and verify employee record was created
+      72 |     await expect(
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:69:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('heading', { name: /Employee.*hired successfully/i })
+    Expected: visible
+    Timeout: 30000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 30000ms[22m
+    [2m  - waiting for getByRole('heading', { name: /Employee.*hired successfully/i })[22m
+
+
+      72 |     await expect(
+      73 |       page.getByRole('heading', { name: /Employee.*hired successfully/i })
+    > 74 |     ).toBeVisible({ timeout: 30000 });
+         |       ^
+      75 |
+      76 |     const employeeLink = page.getByRole('link', { name: `${HIRE_DETAILS.firstName} ${HIRE_DETAILS.lastName}` });
+      77 |     await employeeLink.click();
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:74:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[7/12] [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:88:7 › HCM New Employee Generation › User cannot proceed with missing required fields
+[1A[2K[8/12] [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:117:7 › HCM New Employee Generation › User cannot proceed with an invalid hire date
+[1A[2K[9/12] [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee
+[1A[2K  2) [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('combobox', { name: /Why are you hiring an employee?/i })[22m
+
+
+       at ..\helpers\hcmHelpers.ts:13
+
+      11 |   preWait: number = TIMEOUTS.SHORT
+      12 | ): Promise<void> {
+    > 13 |   await locator.fill(value);
+         |                 ^
+      14 |   await page.waitForTimeout(preWait); // wait for HCM dropdown to populate before confirming
+      15 |   if (pressKey === 'ArrowDown') {
+      16 |     await locator.press('ArrowDown');
+        at fillCombobox (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:13:17)
+        at fillAllHireDetailFields (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:67:11)
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('combobox', { name: /Position/i })[22m
+
+
+       at ..\helpers\hcmHelpers.ts:13
+
+      11 |   preWait: number = TIMEOUTS.SHORT
+      12 | ): Promise<void> {
+    > 13 |   await locator.fill(value);
+         |                 ^
+      14 |   await page.waitForTimeout(preWait); // wait for HCM dropdown to populate before confirming
+      15 |   if (pressKey === 'ArrowDown') {
+      16 |     await locator.press('ArrowDown');
+        at fillCombobox (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:13:17)
+        at fillAllHireDetailFields (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:67:11)
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[10/12] [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:88:7 › HCM New Employee Generation › User cannot proceed with missing required fields
+[1A[2K  3) [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Submit' })[22m
+    [2m    - locator resolved to <button disabled aria-label="Submit" class="BaseButtonStyles_styles_base__jvi3ds0 BaseButtonStyles_styles_sizes_sm__jvi3ds2d BaseButtonStyles_styles_variants_callToAction_base__jvi3ds13 BaseButtonStyles_styles_styled__jvi3ds1 BaseButtonStyles_styles_styledOutline__jvi3ds2 BaseButtonStyles_styles_variants_callToAction_pseudohover__jvi3ds18 BaseButtonStyles_styles_variants_callToAction_disabled__jvi3ds15">…</button>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    335 × waiting for element to be visible, enabled and stable[22m
+    [2m        - element is not enabled[22m
+    [2m      - retrying click action[22m
+    [2m        - waiting 500ms[22m
+
+
+      67 |     const submitButton = page.getByRole('button', { name: 'Submit' });
+      68 |     await submitButton.scrollIntoViewIfNeeded();
+    > 69 |     await submitButton.click();
+         |                        ^
+      70 |
+      71 |     // Confirm submission and verify employee record was created
+      72 |     await expect(
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:69:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: 'Submit' })[22m
+    [2m    - locator resolved to <button disabled aria-label="Submit" class="BaseButtonStyles_styles_base__jvi3ds0 BaseButtonStyles_styles_sizes_sm__jvi3ds2d BaseButtonStyles_styles_variants_callToAction_base__jvi3ds13 BaseButtonStyles_styles_styled__jvi3ds1 BaseButtonStyles_styles_styledOutline__jvi3ds2 BaseButtonStyles_styles_variants_callToAction_pseudohover__jvi3ds18 BaseButtonStyles_styles_variants_callToAction_disabled__jvi3ds15">…</button>[22m
+    [2m  - attempting click action[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible, enabled and stable[22m
+    [2m      - element is not enabled[22m
+    [2m    - retrying click action[22m
+    [2m      - waiting 100ms[22m
+    [2m    316 × waiting for element to be visible, enabled and stable[22m
+    [2m        - element is not enabled[22m
+    [2m      - retrying click action[22m
+    [2m        - waiting 500ms[22m
+
+
+      67 |     const submitButton = page.getByRole('button', { name: 'Submit' });
+      68 |     await submitButton.scrollIntoViewIfNeeded();
+    > 69 |     await submitButton.click();
+         |                        ^
+      70 |
+      71 |     // Confirm submission and verify employee record was created
+      72 |     await expect(
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:69:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-5e19e-ser-can-hire-a-new-employee-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[11/12] [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:88:7 › HCM New Employee Generation › User cannot proceed with missing required fields
+[1A[2K[12/12] [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:117:7 › HCM New Employee Generation › User cannot proceed with an invalid hire date
+[1A[2K[13/12] (retries) [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:117:7 › HCM New Employee Generation › User cannot proceed with an invalid hire date
+[1A[2K[14/12] (retries) [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee
+[1A[2K[15/12] (retries) [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee
+[1A[2K[16/12] (retries) [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee (retry #1)
+[1A[2K[17/12] (retries) [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee (retry #1)
+[1A[2K[18/12] (retries) [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee (retry #1)
+[1A[2K  4) [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText(/possible duplicate/i).first()
+    Expected: visible
+    Timeout: 20000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 20000ms[22m
+    [2m  - waiting for getByText(/possible duplicate/i).first()[22m
+
+
+      175 |     await expect(
+      176 |       page.getByText(/possible duplicate/i).first()
+    > 177 |     ).toBeVisible();
+          |       ^
+      178 |
+      179 |   });
+      180 |
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:177:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText(/possible duplicate/i).first()
+    Expected: visible
+    Timeout: 20000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 20000ms[22m
+    [2m  - waiting for getByText(/possible duplicate/i).first()[22m
+
+
+      175 |     await expect(
+      176 |       page.getByText(/possible duplicate/i).first()
+    > 177 |     ).toBeVisible();
+          |       ^
+      178 |
+      179 |   });
+      180 |
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:177:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-firefox-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  5) [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('combobox', { name: /Business Unit/i })[22m
+
+
+       at ..\helpers\hcmHelpers.ts:13
+
+      11 |   preWait: number = TIMEOUTS.SHORT
+      12 | ): Promise<void> {
+    > 13 |   await locator.fill(value);
+         |                 ^
+      14 |   await page.waitForTimeout(preWait); // wait for HCM dropdown to populate before confirming
+      15 |   if (pressKey === 'ArrowDown') {
+      16 |     await locator.press('ArrowDown');
+        at fillCombobox (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:13:17)
+        at fillAllHireDetailFields (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:67:11)
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:161:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText(/possible duplicate/i).first()
+    Expected: visible
+    Timeout: 20000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 20000ms[22m
+    [2m  - waiting for getByText(/possible duplicate/i).first()[22m
+
+
+      175 |     await expect(
+      176 |       page.getByText(/possible duplicate/i).first()
+    > 177 |     ).toBeVisible();
+          |       ^
+      178 |
+      179 |   });
+      180 |
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:177:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-webkit-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  6) [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('combobox', { name: /Why are you hiring an employee?/i })[22m
+
+
+       at ..\helpers\hcmHelpers.ts:13
+
+      11 |   preWait: number = TIMEOUTS.SHORT
+      12 | ): Promise<void> {
+    > 13 |   await locator.fill(value);
+         |                 ^
+      14 |   await page.waitForTimeout(preWait); // wait for HCM dropdown to populate before confirming
+      15 |   if (pressKey === 'ArrowDown') {
+      16 |     await locator.press('ArrowDown');
+        at fillCombobox (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:13:17)
+        at fillAllHireDetailFields (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:67:11)
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:161:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 400000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 400000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('combobox', { name: /Why are you hiring an employee?/i })[22m
+
+
+       at ..\helpers\hcmHelpers.ts:13
+
+      11 |   preWait: number = TIMEOUTS.SHORT
+      12 | ): Promise<void> {
+    > 13 |   await locator.fill(value);
+         |                 ^
+      14 |   await page.waitForTimeout(preWait); // wait for HCM dropdown to populate before confirming
+      15 |   if (pressKey === 'ArrowDown') {
+      16 |     await locator.press('ArrowDown');
+        at fillCombobox (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:13:17)
+        at fillAllHireDetailFields (C:\Users\ØyvindRunde\tests\helpers\hcmHelpers.ts:67:11)
+        at C:\Users\ØyvindRunde\tests\tests\scenarios\CHR\chr_scen01.spec.ts:161:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-CHR-chr_scen01-H-2b487-hiring-a-duplicate-employee-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  6 failed
+    [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+    [chromium] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+    [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+    [firefox] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+    [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:16:7 › HCM New Employee Generation › User can hire a new employee 
+    [webkit] › tests\scenarios\CHR\chr_scen01.spec.ts:145:7 › HCM New Employee Generation › User is warned when hiring a duplicate employee 
+  6 passed (28.8m)
